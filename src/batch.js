@@ -32,11 +32,11 @@ function handleBatch(router, req) {
   var promises = [];
   for (var restRequest of req.body.requests) {
     // The routablePath is the path minus the api prefix
-    if (restRequest.path.slice(0, apiPrefixLength) != apiPrefix) {
+    /*if (restRequest.path.slice(0, apiPrefixLength) != apiPrefix) {
       throw new Parse.Error(
         Parse.Error.INVALID_JSON,
         'cannot route batch path ' + restRequest.path);
-    }
+    }*/
     var routablePath = restRequest.path.slice(apiPrefixLength);
 
     // Use the router to figure out what handler to use
